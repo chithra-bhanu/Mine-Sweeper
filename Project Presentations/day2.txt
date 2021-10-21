@@ -1,0 +1,95 @@
+\documentclass[14pt]{beamer}
+\usepackage{graphicx}
+\graphicspath{ {./Daily-images/} }
+\title{Minesweeper}
+\date{\today}
+\author[Bvrith]{Chithra Bhanu: 6614: AIML \\ Asritha: 0510 : CSE \\ Manisha:0428 : ECE\\  Kavya: 0475: ECE\\ }
+\usefonttheme{serif}
+\usepackage{bookman}
+\usepackage{hyperref}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usecolortheme{orchid}
+\beamertemplateballitem
+
+\begin{document}
+    \begin{frame}
+        \titlepage
+    \end{frame}
+    \begin{frame}
+	\frametitle{Introduction}
+        \begin{itemize}
+	    \item To find the mines and mark them in the shortest time possible
+	\end{itemize}
+    \end{frame}
+    \begin{frame}
+    \frametitle{Approach}
+        \begin{itemize}
+	    \item Creating the board using Pygame\\
+	    \item Writing the code logic 
+	    \item Adding GUI features to the board \\
+	    \item Integrating the code with GUI
+	    \item Testing
+	    \end{itemize}
+    \end{frame}
+    \begin{frame}
+        \frametitle{Learnings}
+	\begin{itemize}
+	    \item Git
+	    \item LaTeX
+	\end{itemize}
+    \end{frame}
+    \begin{frame}
+        \frametitle{Tech Stack}
+	\begin{itemize}
+	    \item Pygame
+	\end{itemize}
+    \end{frame}
+    \begin{frame}
+        \frametitle{Day1}
+	\begin{itemize}
+	    \item Created git repo
+	    \item Learnt about LaTeX
+	\end{itemize}
+    \end{frame}
+    \begin{frame}
+        \frametitle{Day2}
+	\begin{itemize}
+	    \item Explored and installed Pygame
+	    \item Created an empty board 
+	\end{itemize}
+    \end{frame}
+    \begin{frame}
+        \frametitle{Day3}
+	\begin{itemize}
+	    \item Writing the mine sweeper code
+	    \item Adding GUI features to the board
+	\end{itemize}
+    \end{frame}
+    \begin{frame}
+	\frametitle{Challenges faced}
+        \begin{itemize}
+	   \item Working on git and LaTeX
+	   \item Finding appropriate GUI module
+	\end{itemize}
+    \end{frame}
+    \begin{frame}
+	\frametitle{How we overcame challenges}
+        \begin{itemize}
+	   \item Referred the documentations.
+	   \item Took reference from provided templates in case of LaTeX.
+	   \item Browsed to find the GUI modules
+	\end{itemize}
+    \end{frame}
+    \begin{frame}
+	\frametitle{GIT Repo}
+	\begin{itemize}
+		\includegraphics[width = 100mm,scale=1.5]{Screenshot (13).png}
+	\end{itemize}
+    \end{frame}
+    \begin{frame}
+	\begin{center}
+	     THANK YOU
+	\end{center}
+    \end{frame}
+\end{document}
