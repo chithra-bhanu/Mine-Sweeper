@@ -1,6 +1,3 @@
-from piece import Piece
-import random
-
 class Board():
     def __init__(self, size):
         self.size = size
