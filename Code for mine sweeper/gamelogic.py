@@ -22,7 +22,7 @@ class Game():
         topLeft = (0, gameBoardStart_col)
         for row in range(self.board.getSizeOfBoard()[0]):
             for col in range(self.board.getSizeOfBoard()[1]):
-                image = pygame.image.load("D:\Chithra\Python\WISE\Project Minesweeper\Slow Code\empty_block.png")
+                image = pygame.image.load("Images/empty_block.png")
                 self.screen.blit(image, topLeft)
                 topLeft = topLeft[0] + self.getGridSize()[0], topLeft[1]
             topLeft = 0, topLeft[1] + self.getGridSize()[1]
