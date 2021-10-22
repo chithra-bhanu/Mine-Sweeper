@@ -1,7 +1,7 @@
-from game import Game
+from gamelogic import Game
 from board import Board
-size = (9, 9)
-board = Board(size)
+sizeOfBoard = (16, 16)
+board = Board(sizeOfBoard)
 screenSize = (400, 400)
 game = Game(board, screenSize)
 game.run()
