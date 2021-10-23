@@ -28,6 +28,8 @@ class Game():
         topLeft = (0,0)
         for row in range(self.board.board_size()[0]):
             for col in range(self.board.board_size()[1]):
+                piece = self.board.getPiece((row, col))
+                image = self.getImage(piece)
                 image = self.images["grid"]
                 self.screen.blit(image, topLeft)
                 topLeft = topLeft[0] + self.pieceSize[0] , topLeft[1]
@@ -41,5 +43,12 @@ class Game():
             image = pygame.image.load(r"images/" + fileName)
             image = pygame.transform.scale(image, self.pieceSize)
             self.images[fileName.split(".")[0]] = image
+
+    def getImage(self, piece):
+        if piece.is_Bomb():
+            string = "unclicked-bomb"
+        else:
+            string = "grid"
+        return self.images[string]
 
 
