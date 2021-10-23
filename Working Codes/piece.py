@@ -13,4 +13,3 @@ class Piece():
     def is_flagged(self):
         return self.flagged
 
-    
