@@ -30,7 +30,6 @@ class Game():
             for col in range(self.board.board_size()[1]):
                 piece = self.board.getPiece((row, col))
                 image = self.getImage(piece)
-                image = self.images["grid"]
                 self.screen.blit(image, topLeft)
                 topLeft = topLeft[0] + self.pieceSize[0] , topLeft[1]
             topLeft = 0 , topLeft[1] + self.pieceSize[1]
