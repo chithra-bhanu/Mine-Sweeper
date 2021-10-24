@@ -10,7 +10,6 @@ pygame.init()
 size = [700, 500]
 screen = pygame.display.set_mode(size)
  
-pygame.display.set_caption("My Game")
  
 # Loop until the user clicks the close button.
 done = False
@@ -81,6 +80,6 @@ while not done:
     # Go ahead and update the screen with what we've drawn.
     pygame.display.flip()
  
-# Be IDLE friendly. If you forget this line, the program will 'hang'
+
 # on exit.
 pygame.quit()
