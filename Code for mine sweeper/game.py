@@ -9,7 +9,7 @@ class Game():
     def __init__(self, board, screen_size):
         self.board = board
         self.screen_size = screen_size
-        self.pieceSize = (self.screen_size[0] // (self.board.board_size())[1] , self.screen_size[1] // (self.board.board_size())[0])
+        self.pieceSize = (self.screen_size[0] // (self.board.getSizeOfBoard())[1] , self.screen_size[1] // (self.board.getSizeOfBoard())[0])
         self.load_images()
         self.solver = Solver(self.board)
 
@@ -39,8 +39,8 @@ class Game():
     #draws the board
     def drawBoard(self):
         topLeft = (0, 0)
-        for row in self.board.getBoard():
-            for piece in row:
+        for row in self.board.getSizeOfBoard():
+            for piece in range(row):
                 rect = pygame.Rect(topLeft, self.pieceSize)
                 image = self.images[self.getImage(piece)]
                 self.screen.blit(image, topLeft) 
