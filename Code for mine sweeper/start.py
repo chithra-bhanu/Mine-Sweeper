@@ -6,6 +6,7 @@ screen = pygame.display.set_mode((screen_width,screen_height))
 pygame.display.set_caption("menu")
 
 start_img = pygame.image.load("START_BUTTON.png").convert_alpha()
+scaled_image = pygame.transform.scale(start_img, (100 , 200))
 class Button():
     def __init__(self,x,y,image):
         self.image = image
@@ -15,7 +16,7 @@ class Button():
     def draw(self):
         screen.blit(self.image,(self.rect.x,self.rect.y))
     
-start_button = Button(10,10,start_img)
+start_button = Button(20, 20 , scaled_image)
 
 
 
