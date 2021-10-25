@@ -3,7 +3,10 @@ class Piece():
         self.hasBomb = hasBomb
         self.clicked = False
         self.flagged = False
-        self.neighbors = []
+        self.questioned = False
+        self.cleared = False
+        self.lockedStatus = False
+        self.rClicksNumber = 1
 
     def is_Bomb(self):
         return self.hasBomb
@@ -13,29 +16,40 @@ class Piece():
 
     def is_flagged(self):
         return self.flagged
-    
-    def setNeighbors(self, neighbors):
-        self.neighbors = neighbors
-   
-    def setNumAround(self):
-        self.numAround  = 0
-        for neighbor in self.neighbors:
-            if neighbor.is_Bomb:
-                self.numAround += 1
-        return self.numAround
-        
-    def getNumAround(self):
-        return self.setNumAround()
-    
 
-    def getNeighbors(self):
-        return self.neighbors
-
-    def toggleFlag(self):
-        self.flagged = not self.flagged
+    def is_questioned(self):
+        return self.questioned
+    
+    def is_cleared(self):
+        return self.cleared
 
     def click(self):
         self.clicked = True
+        return self.clicked
 
-    def getNeighbors(self):
-        return self.neighbors
+    def makeFlag(self):
+        self.flagged = True
+        self.rClicksNumber = 2
+        return self.flagged
+    
+    def makeQuestion(self):
+        self.flagged = False
+        self.questioned = True
+        self.rClicksNumber = 3
+        return self.questioned
+
+    def clear(self):
+        self.questioned = False
+        self.cleared = True
+        self.rClicksNumber = 1
+        return self.cleared
+
+    def get_rClicksNumber(self):
+        return self.rClicksNumber
+
+    def lock(self):
+        self.lockedStatus = True
+        return self.lockedStatus
+
+    def is_locked(self):
+        return self.lockedStatus
