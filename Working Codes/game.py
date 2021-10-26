@@ -39,11 +39,41 @@ class Game():
             elif self.board.lostStatus():
                 self.lost()
                 if_running = False
-        pygame.quit()    
+        res = (500, 500)  
+        screen = pygame.display.set_mode(res) 
+        color = (255, 0, 0) 
+        self.color_light = (170,170,170) 
+        self.color_dark = (100, 100, 100) 
+        self.width = screen.get_width()
+        self.height = screen.get_height() 
+        smallfont = pygame.font.SysFont('Corbel', 27) 
+        self.text1 = smallfont.render('QUIT' , True , color) 
+        #self.text2 = smallfont.render('RESTART' , True , color) 
+        while True: 
+            for event in pygame.event.get():  
+                if event.type == pygame.QUIT: 
+                    pygame.quit()
+                if event.type == pygame.MOUSEBUTTONDOWN: 
+                    if self.width * 0.35 <= mouse[0] <= self.width * 0.35 + 50 and self.height/2 <= mouse[1] <= self.height/2+40: 
+                        pygame.quit()
+                    #if self.width * 0.55 <= mouse[0] <= self.width * 0.55 + 100 and self.height/2 <= mouse[1] <= self.height/2+40:
+                        #self.runBoard()
+            screen.fill((0, 0, 0))  
+            mouse = pygame.mouse.get_pos() 
+            if self.width * 0.35 <= mouse[0] <= self.width * 0.35 + 50 and self.height/2 <= mouse[1] <= self.height/2+40: 
+                pygame.draw.rect(screen,self.color_light,[self.width * 0.35,self.height/2, 70 ,40]) 
+            else: 
+                pygame.draw.rect(screen,self.color_dark,[self.width * 0.35, self.height/2, 70 ,40]) 
+                #pygame.draw.rect(screen,self.color_dark,[self.width * 0.55 ,self.height/2, 100 ,40])
+    # superimposing the text onto our button 
+            screen.blit(self.text1 , (self.width/4 +50,self.height/2)) 
+            #screen.blit(self.text2 , (self.width/4 + 150, self.height/2))  
+            pygame.display.update()
+   
 
     #draws the board
     def drawBoard(self):
-        topLeft = (0,0)
+        topLeft = (0,0) 
         for row in range(self.board.board_size()[0]):
             for col in range(self.board.board_size()[1]):
                 #piece = self.board.getPiece((row, col))
@@ -79,10 +109,14 @@ class Game():
         if piece.is_clicked():
             return str(self.board.getMinesAround(index)) if not piece.is_Bomb() else 'bomb_clicked'
         if (self.board.lostStatus()):
-            if piece.is_clicked():
-                return 'bomb_clicked'
-            if (not piece.is_clicked()) and piece.is_Bomb():
-                return 'unclicked-bomb'
+            if piece.is_Bomb():
+                '''if piece.is_clicked():
+                    return 'bomb_clicked'
+                else:
+                    return 'unclicked-bomb'''
+                return "bomb_clicked"
+            else:
+                return "empty_block"
         else:
             if piece.is_locked():
                 pass
@@ -110,10 +144,10 @@ class Game():
     def win(self):
         sound = pygame.mixer.Sound('win_music.mp3')
         sound.play()
-        time.sleep(5)
+        time.sleep(19)
 
     def lost(self):
         sound = pygame.mixer.Sound('lost_music.mpeg')
         sound.play()
-        time.sleep(5)
+        time.sleep(3)
 
