@@ -26,17 +26,17 @@ class Board():
     def getPiece(self, index):
         return self.board[index[0]][index[1]]
         
-    def getMinesAround(self, index):
+    def openPiecesAround(self, index):
         self.index = index
-        self.minesAround = 0
+        piecesAround = []
         for row in range(index[0] - 1, index[0] + 2):
             for col in range(index[1] - 1, index[1] + 2):
                 boundary = row < 0  or row >= self.size[0] or col < 0 or col >= self.size[1]
                 if boundary or row == index[0] and col == index[1]:
                     continue
                 if self.getPiece((row, col)).is_Bomb():
-                    self.minesAround += 1
-        return self.minesAround
+                    piecesAround.append((row, col))
+        return piecesAround
 
     
     def rClickedStatus(self, index):
@@ -54,6 +54,7 @@ class Board():
             self.won = True
         elif self.checkLost(piece):
             self.lost = True
+            piece.click()
         else:
             if piece.get_rClicksNumber() == 2 or piece.get_rClicksNumber() == 3:
                 piece.lock()
