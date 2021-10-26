@@ -1,5 +1,11 @@
 
+<<<<<<< HEAD
 import pygame
+=======
+import pygame 
+import sys 
+  
+>>>>>>> b95a23160f1dd4e8561c52ab2d40bbace7a0b9c0
   
 # initializing the constructor 
 pygame.init() 
@@ -49,7 +55,12 @@ while True:
             # button the game is terminated 
             if width * 0.35 <= mouse[0] <= width * 0.35 + 50 and height/2 <= mouse[1] <= height/2+40: 
                 pygame.quit()
+<<<<<<< HEAD
  
+=======
+
+            '''Should add the functionality for restart button'''
+>>>>>>> b95a23160f1dd4e8561c52ab2d40bbace7a0b9c0
                   
     # fills the screen with a color 
     screen.fill((0, 0, 0)) 
@@ -65,7 +76,11 @@ while True:
           
     else: 
         pygame.draw.rect(screen,color_dark,[width * 0.35,height/2, 70 ,40]) 
+<<<<<<< HEAD
         #pygame.draw.rect(screen,color_dark,[width * 0.55 ,height/2, 100 ,40])
+=======
+        pygame.draw.rect(screen,color_dark,[width * 0.55 ,height/2, 100 ,40])
+>>>>>>> b95a23160f1dd4e8561c52ab2d40bbace7a0b9c0
     # superimposing the text onto our button 
     screen.blit(text1 , (width/4 +50,height/2)) 
     screen.blit(text2 , (width/4 + 150, height/2)) 
