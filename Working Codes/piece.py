@@ -6,6 +6,7 @@ class Piece():
         self.questioned = False
         self.cleared = False
         self.lockedStatus = False
+        self.opened = False
         self.rClicksNumber = 1
 
     def is_Bomb(self):
@@ -53,3 +54,14 @@ class Piece():
 
     def is_locked(self):
         return self.lockedStatus
+
+    def isOpened(self):
+        return self.opened
+    
+    def openIt(self):
+        self.opened = True
+        return self.opened
+
+    def makeNoBomb(self):
+        self.hasBomb = False
+        return self.hasBomb

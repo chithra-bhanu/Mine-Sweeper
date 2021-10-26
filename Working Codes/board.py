@@ -54,7 +54,6 @@ class Board():
             self.won = True
         elif self.checkLost(piece):
             self.lost = True
-
         else:
             if piece.get_rClicksNumber() == 2 or piece.get_rClicksNumber() == 3:
                 piece.lock()
