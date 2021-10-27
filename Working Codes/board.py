@@ -40,6 +40,7 @@ class Board():
 
     
     def rClickedStatus(self, index):
+        self.index = index
         piece = self.getPiece(index)
         if piece.get_rClicksNumber() == 1:
             return piece.makeFlag()
@@ -48,7 +49,9 @@ class Board():
         elif piece.get_rClicksNumber() == 3:
             return piece.clear()
 
-    def lClickedStatus(self, index):
+    def lClickedStatus(self, index, clicks):
+        self.index = index
+        self.clicks = clicks
         piece = self.getPiece(index)
         if self.checkWon():
             self.won = True
@@ -59,6 +62,9 @@ class Board():
             if piece.get_rClicksNumber() == 2 or piece.get_rClicksNumber() == 3:
                 piece.lock()
             else:
+                if clicks == 1:
+                    piece.makeNoBomb()
+                    piece.click()
                 piece.click()
 
     def checkWon(self):
@@ -80,6 +86,4 @@ class Board():
 
     def winStatus(self):
         return self.won 
-
-    
 

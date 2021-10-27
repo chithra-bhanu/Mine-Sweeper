@@ -11,40 +11,22 @@ class Game():
         self.clicks = 0
         self.load_images()
         self.runBoard()
-
-    """def startBoard(self):
-        pygame.init()
-        pygame.display.set_mode(self.screen_size)
-        pygame.display.set_caption("MINE SWEEPER") 
-        color = (255, 0, 0) 
-        self.color_light = (170,170,170) 
-        self.color_dark = (100, 100, 100) 
-        self.width = screen.get_width()
-        self.height = screen.get_height() 
-        smallfont = pygame.font.SysFont('Corbel', 27) 
-        self.text1 = smallfont.render('QUIT' , True , color)
-        font = pygame.font.Font(None, 50)
-        text = font.render("Press Space bar to Start", True, color)
-        text_rect = text.get_rect(center = (self.width * 0.45, self.height / 4))
-        screen.blit(text, text_rect)
-        pygame.display.update()
-        while True: 
-            for event in pygame.event.get():  
-                if event.type == pygame.QUIT: 
-                    pygame.quit()
-                if event.type == pygame.KEYDOWN:
-                    if event.key == pygame.K_SPACE:
-                        self.runBoard()
-                pygame.display.update()"""
      
-
     #runs the board
     def runBoard(self):
         pygame.init()
         self.screen = pygame.display.set_mode(self.screen_size)
         pygame.display.set_caption("MINE SWEEPER")
         if_running  = True
+        frame_count = 0
+        frame_rate = 60
         while if_running:
+            clock = pygame.time.Clock()
+            total_seconds = frame_count // frame_rate
+            minutes = total_seconds // 60
+            seconds = total_seconds % 60
+            frame_count += 1
+            clock.tick(frame_rate)
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     if_running = False
@@ -56,7 +38,7 @@ class Game():
                     if rightClicked:
                         self.board.rClickedStatus(self.getIndex(position))
                     if leftClicked:
-                        self.board.lClickedStatus(self.getIndex(position))
+                        self.board.lClickedStatus(self.getIndex(position), self.clicks)
                     #else:
                     #  continue
             self.drawBoard()
@@ -66,9 +48,9 @@ class Game():
                 if_running = False
             elif self.board.lostStatus():
                 self.lost()
-                if_running = False
-        res = (500, 500)  
-        screen = pygame.display.set_mode(res) 
+                if_running = False 
+        time = "Time: {0:02}:{1:02}".format(minutes, seconds)
+        screen = pygame.display.set_mode(self.screen_size) 
         color = (255, 0, 0) 
         self.color_light = (170,170,170) 
         self.color_dark = (100, 100, 100) 
@@ -98,7 +80,9 @@ class Game():
                 text = font.render("YOU LOSE!!", True, color)
                 text_rect = text.get_rect(center = (self.width * 0.45, self.height / 4))
             screen.blit(text, text_rect)
-
+            font = pygame.font.Font(None, 25)
+            line = font.render(time, True, color)
+            screen.blit(line, (self.width * 0.32, self.height * 0.3))
             pygame.display.update()
    
 
@@ -130,15 +114,13 @@ class Game():
         piece = self.board.getPiece(index)
         if piece.is_clicked():
             minesAround = self.getMinesAround(index)
-            if self.getNumOfClicks == 1:
-                piece.makeNoBomb()
-            if minesAround == 0:
-                for idx in self.board.openPiecesAround(index):
-                    each = self.board.getPiece(idx)
-                    if not each.is_Bomb():
-                        each.click()
-                        self.getImage(idx)
             if not piece.is_Bomb():
+                if minesAround == 0:
+                    for idx in self.board.openPiecesAround(index):
+                        each = self.board.getPiece(idx)
+                        if not each.is_Bomb():
+                            each.click()
+                            self.getImage(idx)
                 return str(minesAround)
             else:
                 return 'bomb_clicked'
