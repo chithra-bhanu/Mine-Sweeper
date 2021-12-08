@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.8) (preloaded format=pdflatex 2021.10.20)  27 OCT 2021 14:08
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.8) (preloaded format=pdflatex 2021.10.20)  27 OCT 2021 14:57
 entering extended mode
 **./finalpresentation.tex
 (finalpresentation.tex
@@ -734,10 +734,6 @@ efault.sty)
 default.sty)
 (C:\Users\chikk\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerinnertheme
 default.sty
-! I can't write on file `finalpresentation.pdf'.
-Please type another file name for output: Finalpresentation.pdf
-! I can't write on file `Finalpresentation.pdf'.
-Please type another file name for output: presentation
 \beamer@dima=\dimen282
 \beamer@dimb=\dimen283
 )
@@ -766,8 +762,7 @@ tex.def
 File: l3backend-pdftex.def 2021-08-04 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count326
 \l__pdf_internal_box=\box75
-)
-No file finalpresentation.aux.
+) (finalpresentation.aux)
 \openout1 = `finalpresentation.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 13.
@@ -788,6 +783,7 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 13.
 LaTeX Font Info:    ... okay on input line 13.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 13.
 LaTeX Font Info:    ... okay on input line 13.
+
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -865,6 +861,7 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 13.
 LaTeX Info: Redefining \pageref on input line 13.
 LaTeX Info: Redefining \nameref on input line 13.
+ (finalpresentation.out) (finalpresentation.out)
 \@outlinefile=\write5
 \openout5 = `finalpresentation.out'.
 
@@ -1004,19 +1001,13 @@ LaTeX Font Info:    Font shape `T1/pbk/m/it' in size <7> not available
 \openout8 = `finalpresentation.snm'.
 
  (finalpresentation.aux)
-
-Package rerunfilecheck Warning: File `finalpresentation.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `finalpresentation.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  D41D8CD98F00B204E9800998ECF8427E;0.
+Package rerunfilecheck Info: File `finalpresentation.out' has not changed.
+(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 20908 strings out of 478927
- 390907 string characters out of 2852534
- 671355 words of memory out of 3000000
+ 20913 strings out of 478927
+ 391255 string characters out of 2852534
+ 671541 words of memory out of 3000000
  38299 multiletter control sequences out of 15000+600000
  416810 words of font info for 53 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1025,7 +1016,7 @@ Here is how much of TeX's memory you used:
 /Users/chikk/AppData/Local/Programs/MiKTeX/fonts/type1/urw/bookman/ubkl8a.pfb><
 C:/Users/chikk/AppData/Local/Programs/MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb
 >
-Output written on presentation.pdf (11 pages, 90725 bytes).
+Output written on finalpresentation.pdf (11 pages, 90866 bytes).
 PDF statistics:
  318 PDF objects out of 1000 (max. 8388607)
  23 named destinations out of 1000 (max. 500000)

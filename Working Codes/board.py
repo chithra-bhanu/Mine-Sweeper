@@ -59,7 +59,7 @@ class Board():
             self.lost = True
             piece.click()
         else:
-            if piece.get_rClicksNumber() == 2 or piece.get_rClicksNumber() == 3:
+            if piece.get_rClicksNumber() == 2: #or piece.get_rClicksNumber() == 3:
                 piece.lock()
             else:
                 if clicks == 1:
